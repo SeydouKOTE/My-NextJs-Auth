@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "EPBS Consulting",
   description: "We help companies evolve through smart prospecting, business strategy, and customer-centric solutions.",
   icons: {
-    icon: '/assests/EPBS_icon.png',
+    icon: '/assets/EPBS_icon.png',
   },
 };
 

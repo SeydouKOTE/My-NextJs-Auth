@@ -1,6 +1,8 @@
 import {Poppins} from "next/font/google";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import React from "react";
 
 const font = Poppins({
     subsets: ["latin"],
@@ -17,12 +19,21 @@ export const Header = ({
     return (
         <div className="w-full flex flex-col gap-y items-center
         justify-center">
-            <h1 className={cn(
-                "text-3xl font-semibold",
+            <div className={cn(
+                "text-xl font-semibold",
                 font.className,
             )}>
-                🔐 Auth
-            </h1>
+                <div >
+                    <Image
+                        src="/LOGO_EPBS.png"
+                        alt="EPBS Consulting"
+                        width={300}
+                        height={50}
+                        className="object-contain"
+                        priority
+                    />
+                </div>
+            </div>
             <p className="text-muted-forground text-sm">
                 {label}
             </p>
