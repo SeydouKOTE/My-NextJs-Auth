@@ -10,7 +10,6 @@ import {Header} from "@/app/components/auth/header";
 import {Social} from "@/app/components/auth/social";
 import {BackButton} from "@/app/components/auth/back-button";
 import React from "react";
-import Image from "next/image";
 
 interface CardWrapperProps {
     children: React.ReactNode;
