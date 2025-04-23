@@ -6,7 +6,7 @@ import {currentUser} from "@/lib/auth";
 import {getUserByEmail, getUserById} from "@/data/user";
 import {db} from "@/lib/db";
 import {generateVerificationToken} from "@/lib/token";
-import {sendVerificationEmail} from "@/lib/mail";
+import {sendVerificationEmail} from "@/lib/brevo";
 import bcrypt from "bcryptjs";
 
 export const settings = async (values: z.infer<typeof SettingsSchema>) => {
