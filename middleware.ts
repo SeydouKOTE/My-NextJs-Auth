@@ -7,8 +7,6 @@ import {
     publicRoutes,
 } from "@/routes";
 
-//export { auth as middleware } from "@/auth"
-
 const {auth} = NextAuth(authConfig);
 
 export default auth((req) => {
@@ -20,14 +18,14 @@ export default auth((req) => {
     const isAuthRoute = authRoutes.includes(nextUrl.pathname);
 
     if (isApiAuthRoute) {
-        return null;
+        return; // Remplacer null par undefined (ou simplement return)
     }
 
     if(isAuthRoute){
         if(isLoggedIn){
             return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
         }
-        return null;
+        return; // Remplacer null par undefined
     }
 
     if (!isLoggedIn && !isPublicRoute) {
@@ -42,14 +40,12 @@ export default auth((req) => {
             `/auth/login?callbackUrl=${encodeCallbackUrl}`,
             nextUrl));
     }
-    return null;
+    return; // Remplacer null par undefined
 })
 
 export const config = {
    matcher: [
-    // Skip Next.js internals and all static files, unless found in search params
     '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
-    // Always run for API routes
     '/(api|trpc)(.*)',
   ],
 }

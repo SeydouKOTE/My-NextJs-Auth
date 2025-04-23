@@ -3,13 +3,13 @@ import * as z from "zod";
 import { signIn} from "@/auth"
 import { LoginSchema } from "@/schemas";
 import {DEFAULT_LOGIN_REDIRECT} from "@/routes";
-import {AuthError} from "next-auth";
 import {getUserByEmail} from "@/data/user";
 import {generateTwoFactorToken, generateVerificationToken} from "@/lib/token";
 import {sendTwoFactorTokenEmail, sendVerificationEmail} from "@/lib/mail";
 import {getTwoFactorTokenByEmail} from "@/data/two-factor-token";
 import {db} from "@/lib/db";
 import {getTwoFactorConfirmationByUserId} from "@/data/two-factor-confirmation";
+import {AuthError} from "next-auth";
 
 export async function login(
     values: z.infer<typeof LoginSchema>,
@@ -88,12 +88,14 @@ export async function login(
     })
   } catch (error) {
     if (error instanceof AuthError) {
-      switch (error.type) {
-        case "CredentialsSignin":
-          return { error: "Invalid credentials!" };
-        default:
-          return { error: "Something went wrong!" };
-      }
+      // Utilisez une assertion de type pour informer TypeScript de la structure
+      const authError = error as AuthError & { type: string };
+    switch (authError.type) {
+      case "CredentialsSignin":
+        return { error: "Invalid credentials!" };
+      default:
+        return { error: "Something went wrong!" };
+    }
     }
 
     throw error;
