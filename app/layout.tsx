@@ -5,6 +5,7 @@ import { Toaster } from "sonner";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: "EPBS Consulting",
@@ -47,6 +48,7 @@ export default async function RootLayout({
               <Toaster />
               {children}
               <Analytics />
+              <SpeedInsights />
             </div>
           </div>
         </SessionProvider>
