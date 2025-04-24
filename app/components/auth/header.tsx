@@ -29,8 +29,7 @@ export const Header = ({
                         alt="EPBS Consulting"
                         width={300}
                         height={50}
-                        className="object-contain"
-                        priority
+                        className="object-contain max-w-full h-auto"
                     />
                 </div>
             </div>

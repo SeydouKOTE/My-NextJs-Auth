@@ -18,22 +18,25 @@ export const Social = () => {
         })
     }
     return (
-        <div className="flex w-full max-w-md items-center gap-x-2">
+        <div className="flex flex-col sm:flex-row w-full items-center gap-2">
             <Button
                 size="lg"
-                className="w-1/2 cursor-pointer"
+                className="w-full sm:w-1/2 cursor-pointer"
                 variant="outline"
-                onClick={()=> onClick("google")}>
+                onClick={() => onClick("google")}
+            >
                 <FcGoogle className="h-5 w-5" />
             </Button>
             <Button
                 size="lg"
-                className="w-1/2 cursor-pointer"
+                className="w-full sm:w-1/2 cursor-pointer"
                 variant="outline"
-                onClick={()=>onClick("github")}>
+                onClick={() => onClick("github")}
+            >
                 <FaGithub className="h-5 w-5" />
             </Button>
         </div>
+
 
     );
 };

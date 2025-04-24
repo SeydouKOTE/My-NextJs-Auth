@@ -5,7 +5,7 @@ import {BackButton} from "@/app/components/auth/back-button";
 
 export const ErrorCard = () => {
     return (
-        <Card className="w-[400px] shadow-md">
+        <Card className="w-full max-w-[400px] shadow-md mx-auto px-4">
             <CardHeader>
                 <Header label="Oops! Something went wrong" />
             </CardHeader>
