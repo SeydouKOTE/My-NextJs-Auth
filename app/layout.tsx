@@ -4,6 +4,7 @@ import React from "react";
 import { Toaster } from "sonner";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: "EPBS Consulting",
@@ -45,6 +46,7 @@ export default async function RootLayout({
             <div className="relative z-10 w-full max-w-md sm:max-w-lg md:max-w-2xl">
               <Toaster />
               {children}
+              <Analytics />
             </div>
           </div>
         </SessionProvider>
