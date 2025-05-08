@@ -64,7 +64,8 @@ export const LoginForm = () => {
                     }
                 })
                 .catch(() =>{
-                    setError("Something went wrong");
+                    //setError("Something went wrong");
+                    window.location.href = callbackUrl || DEFAULT_LOGIN_REDIRECT
                 });
         })
     };
