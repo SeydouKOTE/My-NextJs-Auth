@@ -20,6 +20,7 @@ import {FormSuccess} from "@/app/components/form-success";
 import {login} from "@/actions/login";
 import { useSearchParams} from "next/navigation";
 import Link from "next/link";
+import {DEFAULT_LOGIN_REDIRECT} from "@/routes";
 
 export const LoginForm = () => {
     const searchParams = useSearchParams();
