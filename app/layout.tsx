@@ -8,13 +8,13 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
-  title: "EPBS Consulting",
-  description:
-    "We help companies evolve through smart prospecting, business strategy, and customer-centric solutions.",
+  title: "nextAuth by kote",
+  description: "Développeur passionné par le web, la sécurité et les solutions innovantes.",
   icons: {
-    icon: "/assets/EPBS_icon.png",
+    icon: "/kote.png",
   },
 };
+
 
 export default async function RootLayout({
   children,

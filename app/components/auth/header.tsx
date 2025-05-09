@@ -25,8 +25,8 @@ export const Header = ({
             )}>
                 <div >
                     <Image
-                        src="/LOGO_EPBS.png"
-                        alt="EPBS Consulting"
+                        src="/kote.png"
+                        alt="kote"
                         width={300}
                         height={50}
                         className="object-contain max-w-full h-auto"
