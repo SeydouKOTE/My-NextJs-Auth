@@ -16,7 +16,7 @@ const sendBrevoEmail = async ({
     'https://api.brevo.com/v3/smtp/email',
     {
       sender: {
-        name: 'EPBS Consulting',
+        name: 'Auth Test',
         email: 'koteseydou8@gmail.com', // doit être vérifié chez Brevo
       },
       to: [{ email: to }],
